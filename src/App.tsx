@@ -1,10 +1,7 @@
-import {
-  Navigate,
-  Route,
-  BrowserRouter as Router,
-  Routes,
-} from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import "./App.css";
+import Layout from "./components/layouts/Layout";
+import { ThemeProvider } from "./components/themes/theme-provider";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -14,20 +11,36 @@ import Register from "./pages/Register";
 //   return user ? children : <Navigate to="/login" />;
 // }
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <Layout>
+        <Outlet />
+      </Layout>
+    ),
+    children: [
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+    ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+]);
+
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-
-        {/* Routes Protégées */}
-        <Route path="/dashboard" element={<Dashboard />} />
-
-        {/* Rediriger vers Dashboard si connecté */}
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
-      </Routes>
-    </Router>
+    <ThemeProvider defaultTheme="dark" storageKey="eventloop-ui-theme">
+      <RouterProvider router={router} />
+    </ThemeProvider>
   );
 }
 
