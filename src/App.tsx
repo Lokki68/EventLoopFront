@@ -5,11 +5,7 @@ import { ThemeProvider } from "./components/themes/theme-provider";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-
-// function PrivateRoute({ children }: { children: JSX.Element }) {
-//   const user = useAuthStore((s) => s.user);
-//   return user ? children : <Navigate to="/login" />;
-// }
+import { eventsLoader } from "./store/loaders/eventLoader";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +19,7 @@ const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <Dashboard />,
+        loader: eventsLoader,
       },
     ],
   },
