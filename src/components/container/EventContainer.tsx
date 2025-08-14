@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import type { Event } from "../../services/eventService";
+import {formatDate} from '../../lib/utils'
 
 interface EventContainerProps {
   event: Event;
@@ -7,7 +8,7 @@ interface EventContainerProps {
 
 export default function EventContainer({ event }: EventContainerProps) {
   const { id, title, date, active, description } = event;
-  const formattedDate = date;
+  const formattedDate = formatDate(date)
 
   return (
     <div
