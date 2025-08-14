@@ -1,15 +1,14 @@
-import type { User } from "@supabase/supabase-js";
 import { supabase } from "../lib/supabase";
 
 export interface Event {
   id: number;
   title: string;
   date: string;
-  organizer: User;
+  active: boolean;
+  user_id: number;
   description?: string;
-  location: string;
-  image_url: string;
-  participants: User[];
+  location?: string;
+  image_url?: string;
 }
 
 const TABLE_NAME = "Events";
