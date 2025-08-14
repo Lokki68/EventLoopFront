@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import EventContainer from "../components/container/EventContainer";
 import { useAuthStore } from "../store/useAuthStore";
 import { useEventStore } from "../store/useEventStore";
 
@@ -18,9 +19,7 @@ export default function Dashboard() {
       <h1 className="text-xl">Bienvenue, {user?.email}</h1>
       <ul>
         {events.map((event) => (
-          <li key={event.id}>
-            {event.title} - {event.date}
-          </li>
+          <EventContainer event={event} />
         ))}
       </ul>
     </div>

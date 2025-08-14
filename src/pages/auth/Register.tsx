@@ -1,10 +1,10 @@
 import { Label } from "@radix-ui/react-label";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import CardContainer from "../components/container/CardContainer";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { signUp } from "../services/auth";
+import CardContainer from "../../components/container/CardContainer";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { signUp } from "../../services/auth";
 
 export default function Register() {
   const [email, setEmail] = useState("");

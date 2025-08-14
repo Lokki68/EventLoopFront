@@ -3,8 +3,8 @@ import "./App.css";
 import Layout from "./components/layouts/Layout";
 import { ThemeProvider } from "./components/themes/theme-provider";
 import Dashboard from "./pages/Dashboard";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
 import { eventsLoader } from "./store/loaders/eventLoader";
 
 const router = createBrowserRouter([

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import CardContainer from "../components/container/CardContainer";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
-import { signIn } from "../services/auth";
+import CardContainer from "../../components/container/CardContainer";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { Label } from "../../components/ui/label";
+import { signIn } from "../../services/auth";
 
 export default function Login() {
   const [email, setEmail] = useState("");
