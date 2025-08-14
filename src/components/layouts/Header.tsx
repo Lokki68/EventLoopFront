@@ -1,3 +1,4 @@
+import { LogOut } from "lucide-react";
 import { signOut } from "../../services/auth";
 import { ModeToggle } from "../themes/mode-toggle";
 import { Button } from "../ui/button";
@@ -15,7 +16,9 @@ export default function Header() {
         <span className="text-2xl font-semibold">EventLoop</span>
       </div>
       <div className="flex items-center gap-4">
-        <Button onClick={handleLogout}>Deconexion</Button>
+        <Button onClick={handleLogout}>
+          <LogOut className="lg:nine" />
+        </Button>
         <ModeToggle />
       </div>
     </div>

@@ -16,7 +16,6 @@ export default function Dashboard() {
 
   return (
     <div className="p-4">
-      <h1 className="text-xl">Bienvenue, {user?.email}</h1>
       <ul>
         {events.map((event) => (
           <EventContainer event={event} />
