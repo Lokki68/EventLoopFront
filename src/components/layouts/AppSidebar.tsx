@@ -8,7 +8,6 @@ import {
 
 export default function AppSidebar() {
   const user = useAuthStore((state) => state.user);
-  console.log("user => ", user);
   return (
     <Sidebar>
       <SidebarHeader>Navigation</SidebarHeader>
