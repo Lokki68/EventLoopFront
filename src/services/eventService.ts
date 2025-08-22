@@ -11,7 +11,7 @@ export interface Event {
   image_url?: string;
 }
 
-const TABLE_NAME = "Events";
+const TABLE_NAME = "events";
 
 // Create
 export async function createEvent(event: Omit<Event, "id" | "created_at">) {
